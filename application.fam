@@ -1,0 +1,24 @@
+App(
+    appid="mpu6050_reader_app",
+    name="MPU6050 Reader",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="mpu6050_reader_app",
+    cdefines=["APP_MPU6050_READER"],
+    # Najbezpieczniejsza lista wymagań: obejmuje GUI, I2C HAL i moduł bus.
+    requires=[
+        "gui",
+        "furi_hal_i2c",  # Pełna nazwa modułu API (powinna rozwiązać błąd "disabled")
+        "bus",  # Niezbędne do zarządzania I2C/GPIO
+    ],
+    sources=[
+        "mpu6050_reader_app.cpp",
+    ],
+    stack_size=2 * 1024,
+    order=20,
+    fap_icon="icons/mpu6050_icon.png",
+    fap_category="GPIO",
+    fap_author="@Dr.Mosfet",
+    fap_weburl="https://github.com/twoj-profil/flipper-zero-app-mpu6050",
+    fap_version="1.0",
+    fap_description="Reads acceleration (g) and angular velocity (deg/s) using the MPU-6050 sensor via I2C bus.",
+)
