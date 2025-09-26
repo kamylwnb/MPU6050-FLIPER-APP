@@ -1,44 +1,52 @@
-VEML7700 Lux Meter for Flipper Zero
-This is an application for the Flipper Zero that measures ambient light intensity using a VEML7700 sensor and displays the result in lux (lx).
+MPU-6050 Sensor Reader for Flipper Zero 🚀
+A dedicated Flipper Zero application that allows users to easily interface with and read data from an external MPU-6050 Accelerometer and Gyroscope module via the I2C bus. Perfect for basic motion sensing, vibration analysis, or educational purposes.
 
-Features
-Real-time Reading: The application continuously refreshes and displays the measured light intensity value.
+✨ Key Features for Users
+This application transforms your Flipper Zero into a real-time 3-axis G-force meter:
 
-Configurable Gain: The user can easily adjust the sensor's gain, which allows for measurements in various lighting conditions, from very dim to very bright. Available options are: 1/8, 1/4, 1, and 2.
+📈 Real-Time Data Display
+Live Acceleration (G-force): See the instantaneous acceleration values along the X, Y, and Z axes displayed clearly on the main screen, measured in Gs (g).
 
-I2C Address Change: The I2C address of the VEML7700 sensor can be configured.
+Sensor Status: The application checks for sensor connection and displays a clear message if the MPU-6050 is not detected or initialized, preventing confusion.
 
-Simple Menu: Intuitive navigation using the Flipper Zero buttons (OK, arrows, Back).
+📊 Maximum G-Force Tracking
+Peak Measurement: Track and display the maximum G-force recorded separately for the X, Y, and Z axes since the last reset. This is ideal for measuring sudden impacts or peak accelerations.
 
-Hardware Requirements
-Flipper Zero device.
+Easy Reset: A simple key press allows you to instantly reset the maximum recorded values to zero, starting a fresh measurement cycle.
 
-VEML7700 ambient light sensor connected to the GPIO pins.
+⚙️ Customizable Sensor Settings
+Access a Settings menu to fine-tune the sensor's behavior directly from the Flipper Zero:
 
-Usage
-Make sure the VEML7700 sensor is correctly connected to the Flipper Zero (I2C pins).
+I2C Address Selection: Quickly switch between the two common MPU-6050 I2C addresses (0x68 or 0x69) to accommodate different module wiring (controlled by the AD0 pin).
 
-Launch the application. By default, it will show the light intensity value.
+Accelerometer Full-Scale Range (FSR): Adjust the sensitivity and maximum range of the accelerometer to fit your use case, with options for:
 
-To go to the settings, press the OK button. In the settings menu, you can change the gain (Wzmocnienie) and the I2C address (Adres I2C).
+±2g
 
-Use the left and right buttons to change the values in the settings.
+±4g (Default)
 
-After changing the settings, the application will automatically re-initialize the sensor with the new configuration.
+±8g
 
-To return to the main screen, press OK or Back.
+±16g
 
-Press the Back button on the main screen to exit the application.
+Gyroscope Full-Scale Range (FSR): Configure the measurement range for the gyroscope (although currently only acceleration data is displayed), with options up to ±2000 degrees per second.
 
-Code Structure
-veml7700_app.c: The main application file.
+🧭 Intuitive Navigation
+The application features a clean, simple menu structure:
 
-veml7700_app(): The main program function containing the data reading and screen update loop.
+Main Screen: Displays current acceleration and provides quick access to Settings, About, and Max G sub-menus.
 
-init_veml7700(): Function that configures the VEML7700 sensor, including setting the user-selected gain.
+Settings Screen: Allows cursor-based navigation (↑/↓) and value changes (←/→) for all configuration options.
 
-read_veml7700(): Function that reads raw data from the sensor and calculates the lux value, taking the selected gain into account.
+About Screen: Provides basic application information.
 
-veml7700_draw_callback(): Handles the drawing of each screen (main, settings, info).
+📌 How to Use
+Connect: Wire your MPU-6050 module to your Flipper Zero's GPIO pins, ensuring correct I2C connections (SDA, SCL).
 
-veml7700_input_callback(): Processes input events (key presses) for menu navigation and settings changes.
+Run: Launch the application on your Flipper Zero.
+
+Monitor: The main screen immediately starts displaying real-time acceleration data.
+
+Configure: Navigate to Settings (Left button) to change I2C address or sensitivity (FSR).
+
+View Peaks: Navigate to Max G Values (OK button) to see the highest recorded acceleration.
