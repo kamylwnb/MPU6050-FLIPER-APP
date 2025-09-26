@@ -216,17 +216,17 @@ static void draw_max_g_screen(Canvas* canvas, MPU6050App* app) {
     FuriString* g_str = furi_string_alloc();
     
     // Draw Max G X
-    canvas_draw_str(canvas, 5, 20, "Max X:");
+    canvas_draw_str(canvas, 5, 25, "Max X:");
     furi_string_printf(g_str, "%.2f g", (double)max_g_x);
     canvas_draw_str_aligned(canvas, 123, 20, AlignRight, AlignTop, furi_string_get_cstr(g_str));
 
     // Draw Max G Y
-    canvas_draw_str(canvas, 5, 30, "Max Y:");
+    canvas_draw_str(canvas, 5, 35, "Max Y:");
     furi_string_printf(g_str, "%.2f g", (double)max_g_y);
     canvas_draw_str_aligned(canvas, 123, 30, AlignRight, AlignTop, furi_string_get_cstr(g_str));
 
     // Draw Max G Z
-    canvas_draw_str(canvas, 5, 40, "Max Z:");
+    canvas_draw_str(canvas, 5, 45, "Max Z:");
     furi_string_printf(g_str, "%.2f g", (double)max_g_z);
     canvas_draw_str_aligned(canvas, 123, 40, AlignRight, AlignTop, furi_string_get_cstr(g_str));
     
