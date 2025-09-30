@@ -1,6 +1,6 @@
 App(
     appid="mpu6050_reader_app",
-    name="MPU6050 Reader",
+    name="G_Sensor",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="mpu6050_reader_app",
     cdefines=["APP_MPU6050_READER"],
@@ -15,7 +15,7 @@ App(
     ],
     stack_size=2 * 1024,
     order=20,
-    fap_icon="icons/mpu6050_icon.png",
+    fap_icon="icons/icon_mpu6050.png",
     fap_category="GPIO",
     fap_author="@Dr.Mosfet",
     fap_weburl="https://github.com/twoj-profil/flipper-zero-app-mpu6050",
