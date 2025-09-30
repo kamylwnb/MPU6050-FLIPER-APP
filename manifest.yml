@@ -8,7 +8,7 @@ targets:
 sourcecode:
   type: git
   location:
-    origin: https://github.com/twoj-profil/flipper-zero-app-mpu6050
+    origin: https://github.com/kamylwnb/MPU6050-FLIPER-APP
     commit_sha: 81b0d2b63cbd75cafbba8cd94807d4a3606007ba
     subdir: .
 short_description: "Reads acceleration (g) and angular velocity (deg/s) using the MPU-6050 sensor via I2C bus."
