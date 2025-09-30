@@ -1,10 +1,22 @@
-fap_version: 1.0
-fap_source_base: "."
-fap_icon: veml7700_10x10.png
-fap_category: "Sensors" 
-fap_name: "VEML7700 Lux Meter"
-fap_author: "Dr.Mosfet"
-fap_description: "An application for measuring light intensity using the VEML7700 sensor."
-fap_targets:
-  - f7
-  - wb55
+id: "mpu6050_reader"
+name: " g-force"
+author: "@Dr.Mosfet"
+category: "GPIO"
+version: "1.0"
+targets:
+  - "all"
+sourcecode:
+  type: git
+  location:
+    origin: https://github.com/kamylwnb/MPU6050-FLIPER-APP
+    commit_sha: 81b0d2b63cbd75cafbba8cd94807d4a3606007ba
+    subdir: .
+short_description: "Real-Time Data Display Live Acceleration (G-force)"
+description: |
+  MPU-6050 Sensor Reader for Flipper Zero 🚀 A dedicated Flipper Zero application that allows users to easily interface with and read data from an external MPU-6050 Accelerometer and Gyroscope module via the I2C bus. 
+  Perfect for basic motion sensing, vibration analysis, or educational purposes.
+changelog: "docs/CHANGELOG.md"
+screenshots:
+  - screenshots/1.png
+  - screenshots/2.png
+  - screenshots/3.png
