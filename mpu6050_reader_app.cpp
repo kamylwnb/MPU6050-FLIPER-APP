@@ -192,7 +192,8 @@ static void draw_about_screen(Canvas* canvas, MPU6050App* app) {
 
     // Zmiana na FontSecondary i lepsze pozycjonowanie, aby zmieścić się na ekranie
     canvas_set_font(canvas, FontSecondary);
-    canvas_draw_str_aligned(canvas, 64, 20, AlignCenter, AlignTop, "MPU-6050 Reader Application");
+    canvas_draw_str_aligned(canvas, 64, 20, AlignCenter, AlignTop, "MPU-6050 Reader ");
+    canvas_draw_str_aligned(canvas, 64, 30, AlignCenter, AlignTop, "Accelerometer");
     canvas_draw_str_aligned(canvas, 64, 40, AlignCenter, AlignTop, "by Dr Mosfet");
     
     // Back button
@@ -565,8 +566,7 @@ extern "C" int32_t mpu6050_reader_app(void* p) {
     UNUSED(p);
     MPU6050App* app = mpu6050_app_alloc();
 
-    // Funkcja furi_hal_i2c_init() została usunięta, ponieważ powodowała błąd linkera.
-    // Działanie I2C polega na tym, że bus jest inicjalizowany przy pierwszym furi_hal_i2c_acquire.
+
     
     while (app->running) {
         if(!app->is_sensor_initialized) {
